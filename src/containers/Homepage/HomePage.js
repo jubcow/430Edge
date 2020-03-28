@@ -6,9 +6,9 @@ import StudentLayout from '../../hoc/Student Layout/StudentLayout';
 const HomePage = () => {
     
     return (
-        <StudentLayout>
+        <div>
             <h1>Home Page</h1>
-        </StudentLayout>
+        </div>
     )
 }
 
