@@ -1,14 +1,14 @@
 import React from 'react';
-import Layout from '../../hoc/Layout/Layout';
+import StudentLayout from '../../hoc/Student Layout/StudentLayout';
 
 
 // login/logout page
 const HomePage = () => {
     
     return (
-        <Layout>
+        <StudentLayout>
             <h1>Home Page</h1>
-        </Layout>
+        </StudentLayout>
     )
 }
 

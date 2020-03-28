@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import Layout from '../../hoc/Layout/Layout';
-import Aux from '../../hoc/aux';
+import "./StudentPage.css";
+import StudentLayout from '../../hoc/Student Layout/StudentLayout';
 
 class StudentPage extends Component {
 
     render() {
         return (
-            <Aux>
-                <Layout>
+            <StudentLayout>
+                <div className="StudentPage">
                     <h1>Student Page</h1>
-                </Layout>
-            </Aux>
+                </div>
+            </StudentLayout>
         )
     }
 }
