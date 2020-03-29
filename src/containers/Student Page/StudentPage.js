@@ -29,8 +29,6 @@ class StudentPage extends Component {
             <StudentLayout name={this.state.studentName} >
                 <div className="StudentPage">
                     <h1>Student Page</h1>
-                    <p>Student Page Contents</p>
-                    
                 </div>
             </StudentLayout>
         )
