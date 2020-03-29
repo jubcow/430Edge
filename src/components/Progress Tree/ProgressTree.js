@@ -12,7 +12,6 @@ const ProgressTree = (props) => {
 
     return (
         <div className="ProgressTree">
-            <h1>Progress Tree</h1>
             {updateTree()}
         </div>
     )

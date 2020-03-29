@@ -1,10 +1,24 @@
 import React from 'react';
 import './ModuleProgress.css';
 import VisibilitySensor from 'react-visibility-sensor';
-import {CircularProgressbar} from 'react-circular-progressbar';
+import {CircularProgressbar, buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const ModuleProgress = (props) => {
+
+    const getStyle = () => {
+        var style;
+        switch (props.name) {
+            case "Explore":
+                return "red";
+            case "Develop":
+                return "blue";
+            case "Grow":
+                return "green";
+            case "Execute":
+                return "gold"
+        }
+    }
 
     return (
         // TODO circular progress bar with module name in center
@@ -15,7 +29,10 @@ const ModuleProgress = (props) => {
                     return (
                         <CircularProgressbar 
                             value={percentage} 
-                            text={props.name} 
+                            text={props.name}
+                            styles={buildStyles({
+                                pathColor: getStyle()
+                            })}
                         />
                     );
                 }}

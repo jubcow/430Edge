@@ -1,5 +1,23 @@
 
 .ModuleProgress {
-    width: 50%;
+    float: left;
+    width: 10%;
     padding: 10px;
+}
+
+.CircularProgressbar-path {
+    stroke: red;
+}
+
+.Explore {
+    fill: blue;
+}
+
+.Develop {
+    stroke: red;
+    fill: red;
+}
+
+.Grow {
+    fill: red;
 }

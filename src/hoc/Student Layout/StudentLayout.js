@@ -1,13 +1,15 @@
 import React from 'react';
 import "./StudentLayout.css";
-import Sidebar from '../../containers/Sidebar/Sidebar';
+import Topbar from '../../containers/Topbar/Topbar';
+import ModuleBar from '../../containers/ModuleBar/ModuleBar';
 
 // layout wrapper for student pages
 const StudentLayout = (props) => {
     return (
         <div className="StudentLayout">
-            <h1>Layout</h1>
-            <Sidebar />
+            <Topbar name={props.name} />
+            
+            <ModuleBar />
             <div className="PageContents">
                 {props.children}
             </div>
