@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
+import './ProgressTree.css';
 
 const ProgressTree = (props) => {
-    const treeNum = 5 * 4;
-    const [treeIndex, setTreeIndex] = useState(Math.floor(props.totalProgress / treeNum));
+    const [treeIndex, setTreeIndex] = useState(Math.floor(props.totalProgress));
 
+    
     // updates the tree depending on the student progress
     const updateTree = () => {
         return <img src={require("../../assets/images/tree/tree" + treeIndex + ".png")} alt="Progress tree" />;
     }
 
     return (
-        <div>
+        <div className="ProgressTree">
             <h1>Progress Tree</h1>
             {updateTree()}
         </div>

@@ -1,4 +1,6 @@
 
 .StudentPage {
-    background-color: blue;
+    float: left;
+    width: 85%;
+    background-color: lightblue;
 }
