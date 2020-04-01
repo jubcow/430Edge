@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ModuleBar.css";
-import ModuleProgess from '../../components/ModuleProgress/ModuleProgress';
-import ProgressTree from '../../components/Progress Tree/ProgressTree';
+import ModuleProgess from '../../../components/StudentComponents/ModuleProgress/ModuleProgress';
+import ProgressTree from '../../../components/StudentComponents/Progress Tree/ProgressTree';
 
 
 const ModuleBar = (props) => {
