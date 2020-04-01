@@ -10,12 +10,21 @@ const StudentLayout = (props) => {
 
 
     return (
-        <div className="StudentLayout">
+        <div className="StudentLayout" class="container">
             <Topbar name={props.name} />
-            <ModuleBar />
-            <Calendar />
-            <div className="PageContents">
-                {props.children}
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                            <ModuleBar />
+                            <div className="PageContents">
+                                {props.children}
+                            </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <Calendar />
+                </div>
+
             </div>
 
         </div>
