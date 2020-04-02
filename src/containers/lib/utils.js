@@ -4,7 +4,7 @@ function getLogin(user_info){
         const header = {'Accept' : "application/json", "Content-Type": "application/x-www-form-urlencoded"};
         const searchParams = new URLSearchParams(user_info);
 
-        return fetch(`http://52.203.112.209:8000/login`,
+        return fetch(`http://35.192.57.209:8000/login`,
         {method: "POST",
          headers: header,
          body: searchParams }).then(function(resp){

@@ -7,13 +7,12 @@ import Calendar from '../../components/Calendar/Calendar';
 // layout wrapper for student pages
 // TODO maybe use bootstrap for the grid system
 const StudentLayout = (props) => {
-
-
+    
     return (
         <div className="StudentLayout" class="container">
             <Topbar name={props.name} />
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <div class="row">
                             <ModuleBar />
                             <div className="PageContents">
