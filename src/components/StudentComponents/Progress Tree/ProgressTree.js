@@ -7,7 +7,7 @@ const ProgressTree = (props) => {
     
     // updates the tree depending on the student progress
     const updateTree = () => {
-        return <img src={require("../../assets/images/tree/tree" + treeIndex + ".png")} alt="Progress tree" />;
+        return <img src={require("../../../assets/images/tree/tree" + treeIndex + ".png")} alt="Progress tree" />;
     }
 
     return (

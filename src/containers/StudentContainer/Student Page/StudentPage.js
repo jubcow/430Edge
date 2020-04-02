@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import "./StudentPage.css";
-import StudentLayout from '../../hoc/Student Layout/StudentLayout';
-
+import StudentLayout from '../../../hoc/Student Layout/StudentLayout';
+import RecentActivity from '../../../components/StudentComponents/RecentActivity/RecentActivity';
+import CurrentTasks from '../../../components/StudentComponents/CurrentTasks/CurrentTasks';
 
 // main page for the student account
 // gets information from server and pass down as props to child components
@@ -29,6 +30,9 @@ class StudentPage extends Component {
             <StudentLayout name={this.state.studentName} >
                 <div className="StudentPage">
                     <h1>Student Page</h1>
+
+                    <RecentActivity />
+                    <CurrentTasks />
                 </div>
             </StudentLayout>
         )

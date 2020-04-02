@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './containers/Homepage/HomePage.js';
 import StudentPage from './containers/Student Page/StudentPage';
 import LoginPage from './containers/Login Page/LoginPage';
+import StudentPage from './containers/StudentContainer/Student Page/StudentPage';
 
 
 // redirects to different pages

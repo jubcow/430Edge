@@ -1,7 +1,7 @@
 import React from 'react';
 import "./StudentLayout.css";
-import Topbar from '../../containers/Topbar/Topbar';
-import ModuleBar from '../../containers/ModuleBar/ModuleBar';
+import Topbar from '../../containers/StudentContainer/Topbar/Topbar';
+import ModuleBar from '../../containers/StudentContainer/ModuleBar/ModuleBar';
 import Calendar from '../../components/Calendar/Calendar';
 
 // layout wrapper for student pages
@@ -10,14 +10,21 @@ const StudentLayout = (props) => {
 
 
     return (
-        <div className="StudentLayout">
+        <div className="StudentLayout" class="container">
             <Topbar name={props.name} />
-            <ModuleBar />
-            <Calendar />
-            {/* Recent activity */}
-            {/* Current Tasks */ }
-            <div className="PageContents">
-                {props.children}
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                            <ModuleBar />
+                            <div className="PageContents">
+                                {props.children}
+                            </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <Calendar />
+                </div>
+
             </div>
 
         </div>
