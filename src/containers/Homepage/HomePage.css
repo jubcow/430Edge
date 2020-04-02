@@ -35,3 +35,6 @@ li a:hover {
 .bgColor{
         background-color: #d1e3ff
 }
+body{
+        background-color: #d1e3ff !important
+}
