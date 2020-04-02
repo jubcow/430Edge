@@ -3,3 +3,23 @@
     padding: 20px;
     background-color: red;
 }
+
+.buttonLocation{
+  position: fixed;
+  top: 10%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.style{
+    height: 50px;
+    width: 110px;
+    
+
+    color:  white;
+    background-color: black;
+    display: block;
+    font: "Lucida Console";
+    font-size: 25px;
+
+}

@@ -1,21 +1,26 @@
 import React from 'react';
 import {getLogin} from '../lib/utils.js';
+import Button from 'react-bootstrap/Button';
 import {IoIosArrowDropleftCircle} from "react-icons/io";
+import Form from 'react-bootstrap/Form';
 import jsCookie from "js-cookie";
-import  Router from 'next/router';
+import {Redirect} from 'react-router-dom';
 import "./LoginPage.css";
 
 
-
 // login/logout page
+
 class LoginPage extends React.Component {
+
  constructor(props) {
     super(props);
     this.state = {
         email: "",
-        password: ""
+        password: "",
+        type: ""
 
     }
+    
   }
 
   async handleUserEmailUpdate(evt){
@@ -26,7 +31,10 @@ class LoginPage extends React.Component {
      this.setState({password: evt.target.value});
   }
   
+ 
  async handleSearch(evt) {
+
+ 
   const loggedInUser = await getLogin({
     email: this.state.email,
     password: this.state.password
@@ -35,13 +43,14 @@ class LoginPage extends React.Component {
   console.log(loggedInUser);
   if (loggedInUser.status === "success") {
    console.log(loggedInUser);
+   console.log(loggedInUser.name);
    jsCookie.set("fullname", loggedInUser.name);
    jsCookie.set("status","success");
     if(loggedInUser.type === "Student"){
-      Router.replace("../Student Page/StudentPage");
+       this.setState({type: "Student"});
     }
     else if(loggedInUser.type === "Admin"){
-      Router.replace("../Admin Page/AdminPage");
+       this.setState({type: "Admin"});
     }
     
   }
@@ -49,7 +58,8 @@ class LoginPage extends React.Component {
 }
 
 getResult(thing){
-    if(thing.status === "no email"){
+
+ if(thing.status === "no email"){
     return(
       this.state.loggedInUser.message
     )
@@ -60,10 +70,26 @@ else if(thing.status === "not successful"){
   )
 }
 }
+
  render() { 
     
   jsCookie.remove("fullname");
   jsCookie.remove("status");
+
+   if (this.state.type === "Student") {
+      return <Redirect to='/student' />
+    }
+
+  else if(this.state.type === "Admin"){
+    
+     return <Redirect to='/admin' />
+  }
+/*
+  else if(this.state.type === "Reset"){
+     return <Redirect to='/reset' />
+  }
+*/
+
   return ( <div>
     <body>
     
@@ -71,44 +97,25 @@ else if(thing.status === "not successful"){
       
 
       <div className="square centered"> 
-      <h2>Sign In</h2>
+      <h2 className="gi-5x color h1Location">Sign In</h2>
 
-      <Form.Group>
-  <Form.Control size="lg" type="text" placeholder="Large text" />
-  <br />
-  <Form.Control type="text" placeholder="Normal text" />
-  <br />
-  <Form.Control size="sm" type="text" placeholder="Small text" />
+      <Form.Group className="form width">
+  <Form.Control size="lg" type="text"  value={this.state.email} onChange={this.handleUserEmailUpdate.bind(this)} placeholder="UMW Email" required/>
+  <br/>
+  
+  <Form.Control size="lg" type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordUpdate.bind(this)} required/>
 </Form.Group>
-  <div className="structure">
-      <input
-        type="text"
-        className="text-style"
-        value={this.state.email}
-        onChange={this.handleUserEmailUpdate.bind(this)}
-      />
-      <br /> <br />
-      <label>Password:</label>
-      <input
-        type="password"
-        className="text-style"
-        value={this.state.password}
-        onChange={this.handlePasswordUpdate.bind(this)}
-      />
-      <br />
-      <br />
-      <div onClick={this.handleSearch.bind(this)} style={{ margin:"auto auto" ,textAlign: "center"}} className="button-style">
-        Login
-      </div>
-
-      <div style={{ margin:"auto auto" ,textAlign: "center"}} className="button-style">
-        Reset Password
-      </div>
-      <br /> <br />
-      {this.state.loggedInUser ? <div style={{fontSize: "25px"}}> 
+<Button variant="dark" onClick={this.handleSearch.bind(this)} className ="buttonStyle buttonLocation1 ">Login</Button>{' '}
+<h3 className="h3Location">OR</h3>
+<Button variant="dark"  className="buttonStyle buttonLocation2">Reset Password</Button>{' '}
+  
+       {this.state.loggedInUser ? <div className="style styleLocation"> 
       {this.getResult(this.state.loggedInUser)}
     </div> : null}
-    </div>
+     
+      <br /> <br />
+      
+    
 
       
       </div>

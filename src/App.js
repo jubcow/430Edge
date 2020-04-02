@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './containers/Homepage/HomePage.js';
-import StudentPage from './containers/Student Page/StudentPage';
 import LoginPage from './containers/Login Page/LoginPage';
+import Logout from './containers/Logout Page/logout';
 import StudentPage from './containers/StudentContainer/Student Page/StudentPage';
 
 
@@ -16,6 +17,7 @@ class App extends Component {
         <Route path="/" exact component={HomePage} />
         <Route path="/student" component={StudentPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/logout" component={Logout} />
       </Switch>
     );
 

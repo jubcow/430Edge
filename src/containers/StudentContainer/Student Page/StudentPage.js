@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./StudentPage.css";
+import jsCookie from "js-cookie";
 import StudentLayout from '../../../hoc/Student Layout/StudentLayout';
 import RecentActivity from '../../../components/StudentComponents/RecentActivity/RecentActivity';
 import CurrentTasks from '../../../components/StudentComponents/CurrentTasks/CurrentTasks';
@@ -16,7 +17,8 @@ class StudentPage extends Component {
 
     // when page loads, get information from server and load into state
     componentDidMount() {
-        var loadedName = 'student name';
+        console.log(jsCookie.get("fullname"));
+        var loadedName = jsCookie.get("fullname");
         // get request to server here
 
         // set state here
@@ -26,6 +28,7 @@ class StudentPage extends Component {
     }
 
     render() {
+        
         return (
             <StudentLayout name={this.state.studentName} >
                 <div className="StudentPage">

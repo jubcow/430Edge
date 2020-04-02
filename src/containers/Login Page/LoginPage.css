@@ -3,8 +3,20 @@
      color: black;
 }
 
+h3{
+    color: white;
+    font-size: large;
+}
+
 a:hover {
  opacity: 0.6;
+}
+.form{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 body {
@@ -13,6 +25,64 @@ body {
     padding: 0;
 }
 
+.color{
+    color: white;
+}
+
+.buttonStyle{
+    border-color: white;
+    border-style: solid 3px;
+    height: 58px;
+    width: 300px;
+}
+
+.buttonLocation1{
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.buttonLocation2{
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.styleLocation{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.h3Location{
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.width{
+    width: 650px;
+}
+
+.h1Location{
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.style{
+    margin: auto auto;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
 .gi-5x{
     font-size: 5em;
 }  
