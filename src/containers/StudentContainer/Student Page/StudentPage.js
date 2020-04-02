@@ -17,7 +17,6 @@ class StudentPage extends Component {
 
     // when page loads, get information from server and load into state
     componentDidMount() {
-        console.log(jsCookie.get("fullname"));
         var loadedName = jsCookie.get("fullname");
         // get request to server here
 

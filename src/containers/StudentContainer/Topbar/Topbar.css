@@ -13,12 +13,12 @@
 
 .style{
     height: 50px;
-    width: 110px;
+    width: 50px;
     
 
     color:  white;
     background-color: black;
-    display: block;
+    
     font: "Lucida Console";
     font-size: 25px;
 

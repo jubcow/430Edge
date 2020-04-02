@@ -54,7 +54,7 @@ body {
 
 .styleLocation{
   position: fixed;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -81,6 +81,7 @@ body {
     margin: auto auto;
     text-align: center;
     font-size: 25px;
+    width: 500px;
     color: white;
 }
 .gi-5x{

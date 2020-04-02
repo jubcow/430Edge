@@ -73,10 +73,9 @@ else if(thing.status === "not successful"){
 
  render() { 
     
-  jsCookie.remove("fullname");
-  jsCookie.remove("status");
-
+  
    if (this.state.type === "Student") {
+     console.log(jsCookie.get("fullname"));
       return <Redirect to='/student' />
     }
 
@@ -107,7 +106,7 @@ else if(thing.status === "not successful"){
 </Form.Group>
 <Button variant="dark" onClick={this.handleSearch.bind(this)} className ="buttonStyle buttonLocation1 ">Login</Button>{' '}
 <h3 className="h3Location">OR</h3>
-<Button variant="dark"  className="buttonStyle buttonLocation2">Reset Password</Button>{' '}
+<a href="/reset"><Button variant="dark"  className="buttonStyle buttonLocation2">Reset Password</Button>{' '}</a>
   
        {this.state.loggedInUser ? <div className="style styleLocation"> 
       {this.getResult(this.state.loggedInUser)}
