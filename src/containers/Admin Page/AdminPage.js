@@ -36,10 +36,16 @@ class AdminPage extends React.Component {
 					{this.state.info.map(info => <div>{info.Fullname}</div>)}
 				</div>
 				<div class ="column">
-					{this.state.info.map(info => <div>{info.TaskName}</div>)}
-				</div>
-				<div class ="column">
-					{this.state.info.map(info => <div>{info.Description}</div>)}
+					{this.state.info.map(info => <div>
+					{info.TaskName}
+					<form>
+						<div className="radio">	
+							<label>
+								<input type="radio" value ={info.TaskID} />
+								Option
+							</label>
+						</div>
+					</form></div>)}
 				</div>
 			</div>
              	</div>
