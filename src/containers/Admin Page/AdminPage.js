@@ -29,20 +29,22 @@ class AdminPage extends React.Component {
                 return (
                 <div className="AdminPage">
 			<div className="row">
-                                <div class ="column">
+                                <div class ="column" style={{backgroundColor : '#aaa'}}>
 					{this.state.info.map(info => <div>{info.UMWID}</div>)}
+					
 				</div>
-				<div class ="column">
+				<div class ="column" style={{backgroundColor : '#bbb'}}>
 					{this.state.info.map(info => <div>{info.Fullname}</div>)}
+					
 				</div>
-				<div class ="column">
+				<div class ="column" style={{backgroundColor : '#ccc'}}>
 					{this.state.info.map(info => <div>
-					{info.TaskName}
+		
 					<form>
 						<div className="radio">	
 							<label>
 								<input type="radio" value ={info.TaskID} />
-								Option
+								{info.TaskName}
 							</label>
 						</div>
 					</form></div>)}
