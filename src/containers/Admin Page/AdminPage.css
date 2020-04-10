@@ -38,3 +38,15 @@ li a:hover {
 body{
         background-color: #d1e3ff !important
 }
+
+.column{
+	float:left;	
+	width: 384px;
+	padding:20px;
+	height: 300px;
+}
+.row{
+	content:"";
+	display: table;
+	clear: both;
+}

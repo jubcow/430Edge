@@ -12,7 +12,7 @@ class AdminPage extends React.Component {
 
         componentDidMount() {
                 let self = this;
-                fetch('http://35.192.57.209:8000/test', {
+                fetch('http://35.192.57.209:8000/submissions', {
                         method: 'GET'
                         }).then(function(response) {
                         if (response.status >= 400) {
@@ -27,11 +27,22 @@ class AdminPage extends React.Component {
         }
 	render() {
                 return (
-                        <div className="AdminPage">
-                        <center>
-                                {this.state.info.map(info => <div>{info.Email}</div>)}
-                        </center>
-                	</div>
+                <div className="AdminPage">
+			<div className="row">
+                                <div class ="column">
+					{this.state.info.map(info => <div>{info.UMWID}</div>)}
+				</div>
+				<div class ="column">
+					{this.state.info.map(info => <div>{info.Fullname}</div>)}
+				</div>
+				<div class ="column">
+					{this.state.info.map(info => <div>{info.TaskName}</div>)}
+				</div>
+				<div class ="column">
+					{this.state.info.map(info => <div>{info.Description}</div>)}
+				</div>
+			</div>
+             	</div>
         )
     }
 }
