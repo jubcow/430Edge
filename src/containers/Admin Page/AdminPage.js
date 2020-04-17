@@ -49,12 +49,37 @@ class AdminPage extends React.Component {
 								onChange={this.onTaskChange.bind(this)}
 								value={info.TaskID}
 							/>
-							</label>
-								
+							</label>			
 						</form>
 						</div>)}
 				</div>
 			</div>
+
+			<br></br>
+                        Testing Account Creation:
+                        <form>
+                        	<label>
+                                	Full Name :
+                                       	<input type="text" name="fullname" />
+                                </label>
+				<br></br>
+				<label>
+					UMW ID :
+					<input type="text" name="umwid" />
+				</label>
+				<br></br>
+				<label>
+                                        Acc. Type :
+                                        <input type="text" name="accountType" />
+                                </label>
+				<br></br>
+				<label>
+                                        Email :
+                                        <input type="text" name="email" />
+                                </label>
+                               	<input type="submit" value="Submit" />
+                        </form>
+
              	</div>
         )
     }
@@ -64,28 +89,16 @@ class AdminPage extends React.Component {
 		var str = "http://35.192.57.209:8000/approve";
 
 		console.log(id)
-		/*
-		fetch(str, {
-                        method: 'GET',
-			mode: 'cors',
-			headers: {'Content-Type':'application/json'},
-			
-                        }).then(function(response) { return response.json();
-                        if (response.status >= 400) {
-                        throw new Error("Bad response from server");
-                        }
-			})
-		*/
-		
-		fetch('http://35.192.57.209:8000/approve', {
-  			method: 'POST', // or 'PUT'
-			mode: 'no-cors', // cors,
-  			headers: {
-    				'Content-Type': 'application/json'},
-  			body: id,
-			name: "task"
-		})
-					
+	const header = {'Accept' : "application/json", "Content-Type": "application/x-www-form-urlencoded"};
+        const searchParams = new URLSearchParams({var1: id});
+
+        return fetch(`http://35.192.57.209:8000/approve`,
+        {method: "POST",
+         headers: header,
+         body: searchParams }).then(function(resp){
+             return resp.json();
+         });
+
 	}	
 }
 
