@@ -17,8 +17,7 @@ class LoginPage extends React.Component {
     this.state = {
         email: "",
         password: "",
-        type: ""
-
+        type: "",
     }
     
   }
@@ -50,7 +49,7 @@ class LoginPage extends React.Component {
        this.setState({type: "Student"});
     }
     else if(loggedInUser.type === "Admin"){
-       this.setState({type: "Admin"});
+       this.setState({type: "Admin", name: loggedInUser.name});
     }
     
   }
@@ -80,8 +79,8 @@ else if(thing.status === "not successful"){
     }
 
   else if(this.state.type === "Admin"){
-    
-     return <Redirect to='/admin' />
+     console.log(jsCookie.get("fullname"));    
+     return <Redirect to='/admin'/>
   }
 /*
   else if(this.state.type === "Reset"){
@@ -126,172 +125,8 @@ else if(thing.status === "not successful"){
   
       
     
-    <style jsx>{`
-    .structure{
-          position:absolute;
-            top: 54%;
-            left: 48%;
-            margin-right: -50%;
-             transform: translate(-50%, -50%);
-             font-size: 30px;
-             color: blue;
-             font-weight: bold;
-    }
-    
-     h2{
-        position:absolute;
-            top: 29%;
-            left: 50%;
-            margin-right: -50%;
-             transform: translate(-50%, -50%);
-             font-size: 30px;
-    }
-    }
-     .linkStyle{
-            padding-right: 10px;
-          marginRight: 15;
-          marginLeft: 15;
-          color:  DarkBlue;
-          text-decoration: underline;
-          display: block;
-          font: "Lucida Console";
-          font-size: 25px;
-
-          font-weight:bold;
-          display: block;
-            position:absolute;
-            top: 10%;
-            left: 10%;
-            margin-right: -50%;
-             transform: translate(-50%, -50%);
-
-             
-        }
-
-        .linkStyle2{
-            padding-right: 10px;
-          marginRight: 15;
-          marginLeft: 15;
-          color: DarkBlue;
-          font-weight: 750;
-          text-decoration: underline;
-          display: block;
-          font: "Lucida Console";
-          font-size: 25px;
-
-          display: block;
-            position:absolute;
-            top: 10%;
-            left: 20%;
-            margin-right: -50%;
-             transform: translate(-50%, -50%);
-
-             
-        }
-
-
-          .linkStyle3{
-            padding-right: 10px;
-          marginRight: 15;
-          marginLeft: 15;
-          color:  DarkBlue;
-          text-decoration: underline;
-          display: block;
-          font: "Lucida Console";
-          font-size: 25px;
-
-          font-weight:bold;
-          display: block;
-            position:absolute;
-            top: 10%;
-            left: 30%;
-            margin-right: -50%;
-             transform: translate(-50%, -50%);
-
-             
-        }
-        .linkStyle4{
-         background-color: PaleVioletRed;
-              textAlign: center;
-              color: black;
-              width: 100px;
-              font-family: "Arial";
-              display: block;
-              width: 180px;
-              margin: auto auto;
-              position: absolute;
-              top: 75%;
-              left: 25%;
-              margin-right: -50%;
-              transform: translate(-50%, -50%);
-              font-size: 25px;
-        }
-        .header h2{
-            font-family: Courier;
             
-            display: block;
-            position:absolute;
-            top: 13%;
-            left: 47%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-           
-          }
-
-          .header img{
-          
-             display: block;
-               position:absolute;
-               top: 8%;
-               left: 47%;
-               margin-right: -50%;
-               transform: translate(-50%, -50%);
-               border-radius: 50%;
-          }
-
-          h1,
-          h2,
-          a,
-          p {
-            font-family: "Arial";
-          }
-
-          .button-style{
-              cursor: pointer;
-              background-color: LightSlateGray;
-              textAlign: center;
-              color: black;
-              width: 100px;
-              font-family: "Arial";
-              display: block;
-              margin: auto auto;
-              position: absolute;
-              top: 70%;
-              left: 60%;
-              margin-right: -50%;
-              transform: translate(-50%, -50%);
-              font-size: 25px;
-            
-         
-
-          }
-
-          .header {
-            background-color: LightSeaGreen;
-            min-height: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: calc(10px + 2vmin);
-            color: white;
-            height: 150px;
-            
-          }
-        
-         
-        `}</style>
+   
       </div>
 
 );
