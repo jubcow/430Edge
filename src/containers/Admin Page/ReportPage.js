@@ -4,8 +4,20 @@ import "./AdminPage.css";
 import jsCookie from "js-cookie";
 import Button from 'react-bootstrap/Button';
 import { PersonPlus,FilePost,Search } from 'react-bootstrap-icons';
-//import CanvasJSReact from './canvasjs.react';
+import {Bar} from 'react-chartjs-2';
 
+        const state = {
+                labels: ['January', 'February', 'March','April', 'May'],
+                datasets: [
+                {
+                        label: 'Rainfall',
+                        backgroundColor: 'rgba(75,192,192,1)',
+                        borderColor: 'rgba(0,0,0,1)',
+                        borderWidth: 2,
+                        data: [65, 59, 80, 81, 56]
+                }
+                ]
+        }
 
 class ReportPage extends React.Component {
         constructor(props) {
@@ -14,8 +26,20 @@ class ReportPage extends React.Component {
                         info: [],
 			infoTasks: [],
                         adminName: null,
-                }
-        }
+			chartState: {
+				labels: ['January', 'February', 'March','April', 'May'],
+                		datasets: [
+                		{       
+                        		label: 'Rainfall',
+                        		backgroundColor: 'rgba(75,192,192,1)',
+                        		borderColor: 'rgba(0,0,0,1)',
+                        		borderWidth: 2,
+                        		data: [65, 59, 80, 81, 56]
+                		}
+                		]
+			} 
+        	}
+	}
 
         componentDidMount() {
                 let self = this;
@@ -76,6 +100,22 @@ class ReportPage extends React.Component {
 			Total Tasks: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskTotal}</div>)}
 			Total Submitted: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskSubmitted}</div>)}
 			Total Unsubmitted: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskUnsubmitted}</div>)}
+			{this.state.chartState.datasets.data}
+<Bar
+          data={this.state.chartState}
+          options={{
+            title:{
+              display:true,
+              text:'Average Rainfall per month',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'right'
+            }
+          }}
+        />
+
 			</div>
 
                       </div>

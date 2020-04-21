@@ -65,12 +65,13 @@ async handleSearch(evt) {
 			<Form.Group className="form width">
   <Form.Control size="lg" type="text"  value={this.state.search} onChange={this.handleUpdate.bind(this)} placeholder="Search Students" required/>
 			</Form.Group>
-		        <Button variant="dark" onClick={this.handleSearch.bind(this)} className="buttonLocation2 buttonStyle2">Search</Button>{' '}		
 			</div>
-
+			<Button variant="dark" onClick={this.handleSearch.bind(this)} className="buttonLocation2 buttonStyle2">Search</Button>{' '}
+			<Button variant="dark" className="buttonLocation3 buttonStyle2">Delete Account</Button>{' '}
 			
                       </div>
                 )
+
 
     }
 

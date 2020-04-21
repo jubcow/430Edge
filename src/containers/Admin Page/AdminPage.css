@@ -73,9 +73,11 @@ li a:hover {
 }
 
 .buttonLocation2{
+   height: 58px;
+   width: 200px;
    position: fixed;
    top: 50%;
-   left: 900%;
+   left: 77.5%;
    transform: translate(-50%, -50%);
 
 }
