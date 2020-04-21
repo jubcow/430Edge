@@ -4,6 +4,7 @@ import "./AdminPage.css";
 import jsCookie from "js-cookie";
 import Button from 'react-bootstrap/Button';
 import { PersonPlus,FilePost,Search } from 'react-bootstrap-icons';
+//import CanvasJSReact from './canvasjs.react';
 
 
 class ReportPage extends React.Component {
@@ -11,6 +12,7 @@ class ReportPage extends React.Component {
                 super(props);
                 this.state = {
                         info: [],
+			infoTasks: [],
                         adminName: null,
                 }
         }
@@ -20,9 +22,38 @@ class ReportPage extends React.Component {
                 var loadedName = jsCookie.get("fullName");
 
                 this.setState({
-                        adimnName: loadedName
+                        adminName: loadedName
                 });
+
+		fetch('http://35.192.57.209:8000/reportUsers', {
+                        method: 'GET'
+                        }).then(function(response) {
+                        	if (response.status >= 400) {
+                        		throw new Error("Bad response from server");
+                        	}
+                        	return response.json();
+                        }).then(function(data) {
+				//console.log(data);
+                        	self.setState({info: data});
+                        }).catch(err => {
+                        	console.log('caught it!',err);
+                        })
+
+		fetch('http://35.192.57.209:8000/reportTasks', {
+                        method: 'GET'
+                        }).then(function(response) {
+                                if (response.status >= 400) {
+                                        throw new Error("Bad response from server");
+                                }
+                                return response.json();
+                        }).then(function(data) {
+                                console.log(data);
+                                self.setState({infoTasks: data});
+                        }).catch(err => {
+                                console.log('caught it!',err);
+                        })
         }
+
 	render() {
                 return (
                     <div className="AdminPage">
@@ -38,10 +69,15 @@ class ReportPage extends React.Component {
                                 <li><a href="/create"><h2><PersonPlus size={45}/> Create Accounts</h2></a></li>
                                 <li><a href="/view"><h2><Search size={45}/>View Accounts</h2></a></li>
                                 <li><a href="/report"><h2 className="blue"><FilePost size={45}/> Generate Reports</h2></a></li>
-                        </ul>
+                        </ul>	
+		
+			<div className="row location3">
+			Total Students: {this.state.info.map(info => <div>{info.numUsers}</div>)}
+			Total Tasks: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskTotal}</div>)}
+			Total Submitted: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskSubmitted}</div>)}
+			Total Unsubmitted: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskUnsubmitted}</div>)}
+			</div>
 
-
-			
                       </div>
                 )
 

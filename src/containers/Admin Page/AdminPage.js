@@ -33,6 +33,7 @@ class AdminPage extends React.Component {
                         }
                         return response.json();
                         }).then(function(data) {
+			console.log(data);
                         self.setState({info: data});
                         }).catch(err => {
                         console.log('caught it!',err);

@@ -72,6 +72,14 @@ li a:hover {
 
 }
 
+.buttonLocation2{
+   position: fixed;
+   top: 50%;
+   left: 900%;
+   transform: translate(-50%, -50%);
+
+}
+
 .white{
         color: white;
 }
