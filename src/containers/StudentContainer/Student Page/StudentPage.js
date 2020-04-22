@@ -17,6 +17,7 @@ class StudentPage extends Component {
 
     // when page loads, get information from server and load into state
     componentDidMount() {
+        let self = this;
         var loadedName = jsCookie.get("fullname");
         // get request to server here
 
@@ -24,18 +25,53 @@ class StudentPage extends Component {
         this.setState({
             studentName: loadedName
         });
-    }
 
+        fetch('http://35.192.57.209:8000/submissions', {
+            method: 'GET'
+            }).then(function(response) {
+            if (response.status >= 400) {
+            throw new Error("Bad response from server");
+            }
+            return response.json(); 
+            })
+            .then(function(data) {
+                console.log(data);
+                self.setState({info: data});
+            })
+            .catch(err => {
+            console.log('caught it!',err);
+        })
+    }
+    
     render() {
         
-        return (
-            <StudentLayout name={this.state.studentName} >
-                <div className="StudentPage">
-                    <h1>Student Page</h1>
+        // temp until retrieval from backend
+        let recentTasks = [
+            "Sign up for the EDGE program",
+            "Attend a job fair",
+            "Build a resume"
+        ]
+        let currentTasks = [
+            "Apply for an internship",
+            "Attend a resume workshop",
+            "Create a LinkedIn account"
+        ]
 
-                    <RecentActivity />
-                    <CurrentTasks />
-                </div>
+        var moduleProgress = {
+            exploreProgress: 100,
+            developProgress: 40,
+            growProgress: 15,
+            executeProgress: 5
+        }
+        
+        return (
+            <StudentLayout 
+                name={this.state.studentName}
+                recent={recentTasks}
+                current={currentTasks} 
+                modules={moduleProgress}
+            >
+                
             </StudentLayout>
         )
     }

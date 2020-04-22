@@ -5,24 +5,18 @@ import ProgressTree from '../../../components/StudentComponents/Progress Tree/Pr
 
 
 const ModuleBar = (props) => {
-    // filler variables for right now
-    // likely will be passed from student page props
-    var exploreProgress = 100;
-    var developProgress = 40;
-    var growProgress = 15;
-    var executeProgress = 5;
     // total of all module progess divided by 100 to get overall percentage
-    var progress = (exploreProgress + developProgress + growProgress + executeProgress) / 100;
+    var progress = (props.exploreProgress + props.developProgress + props.growProgress + props.executeProgress) / 100;
 
     return (
         <div className="ModuleBar">
             <h1>Module Progress</h1>
             
             <div className="ProgressCircles">
-                <ModuleProgess name="Explore" percentage={exploreProgress} />
-                <ModuleProgess name="Develop" percentage={developProgress} />
-                <ModuleProgess name="Grow" percentage={growProgress} />
-                <ModuleProgess name="Execute" percentage={executeProgress} />
+                <ModuleProgess name="Explore" percentage={props.exploreProgress} />
+                <ModuleProgess name="Develop" percentage={props.developProgress} />
+                <ModuleProgess name="Grow" percentage={props.growProgress} />
+                <ModuleProgess name="Execute" percentage={props.executeProgress} />
 
                 <ProgressTree totalProgress={progress}/>
             </div>
