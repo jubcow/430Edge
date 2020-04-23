@@ -59,9 +59,9 @@ class StudentPage extends Component {
 
         var moduleProgress = {
             exploreProgress: 100,
-            developProgress: 40,
-            growProgress: 15,
-            executeProgress: 5
+            developProgress: 70,
+            growProgress: 35,
+            executeProgress: 15
         }
         
         return (

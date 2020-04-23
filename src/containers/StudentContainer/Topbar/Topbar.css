@@ -1,14 +1,14 @@
 
 .Topbar {
     padding: 20px;
-    background-color: darkblue;
+    background-color: #00305E;
     color: white;
 }
 
-.buttonLocation{
-  position: sticky;
-  top: 10%;
-  left: 70%;
+.button {
+  position: fixed;
+  top: 5%;
+  left: 95%;
   transform: translate(-50%, -50%);
 }
 
@@ -16,8 +16,8 @@
     height: 50px;
     width: 50px;
 
-    color:  white;
-    background-color: black;
+    color:  pink;
+    background-color: pink;
     
     font: "Lucida Console";
     font-size: 25px;
