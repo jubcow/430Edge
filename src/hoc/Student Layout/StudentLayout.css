@@ -1,7 +1,13 @@
 
-.StudentLayout {
-    width: 100%;
-}
 
-.PageContents {
+.column{
+	float:left;	
+	width: 300px;
+	padding:20px;
+	height: 300px;
+}
+.row{
+	content:"";
+	display: table;
+	clear: both;
 }

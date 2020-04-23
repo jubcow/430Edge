@@ -8,7 +8,7 @@ const Topbar = (props) => {
         <div className="Topbar">
             <h3>Welcome, {props.name}!</h3>
             <h1>The EDGE</h1>
-            <a href="./logout" className="buttonLocation"><Button variant="dark" size="lg" className="buttonLocation">Logout</Button>{' '}</a>
+            <Button href="./logout" variant="dark" size="lg" className="button">Logout</Button>
            
         </div>
     );
