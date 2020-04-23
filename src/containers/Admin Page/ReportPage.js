@@ -83,10 +83,7 @@ class ReportPage extends React.Component {
                                 return response.json();
                         }).then(function(data) {
                                 //console.log(data);
-                                testData = data;
-                                console.log(testData);
-                                console.log(data);
-                                console.log(data[0].taskTotal);
+                                //console.log(data[0].taskTotal);
                                 self.setState({
 					chartStateAlt: {
                                 		labels: ['Tasks', 'Unsubmitted', 'Submitted'],
@@ -103,34 +100,6 @@ class ReportPage extends React.Component {
 				});
                         })
 
-		//console.log(this.testData[0]);
-		/*
-		console.log(testData);
-	        console.log(this.state.infoTasks);	
-		console.log(this.state.infoTasks.map(infoTasks => infoTasks.taskTotal));
-		console.log(this.state.infoTasks.taskTotal);
-		*/
-
-		/*
-		console.log(typeof this.state.infoTasks.taskTotal == 'undefined');
-		if(typeof this.state.infoTasks.infoTasks == 'undefined'){
-			console.log("returning");
-			console.log(this.state.infoTasks.taskTotal);
-		}
-		*/
-
-		this.chartState = {
-                	labels: ['Tasks', 'Unsubmitted', 'Submitted'],
-                	datasets: [
-                	{
-                        	label: 'TaskData',
-                        	backgroundColor: 'rgba(75,192,192,1)',
-                        	borderColor: 'rgba(0,0,0,1)',
-                        	borderWidth: 2,
-                        	data: []
-                	}
-                	]
-       	 	}
         }
 
 	render() {
@@ -152,12 +121,11 @@ class ReportPage extends React.Component {
 		
 			<div className="row location3">
 			Total Students: {this.state.info.map(info => <div>{info.numUsers}</div>)}
-			Total Tasks: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskTotal}</div>)}
-			Total Submitted: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskSubmitted}</div>)}
-			Total Unsubmitted: {this.state.infoTasks.map(infoTasks => <div>{infoTasks.taskUnsubmitted}</div>)}
 
 			<Bar
           			data={this.state.chartStateAlt}
+				width={1000}
+				height={500}
           			options={{
             				title:{
               					display:true,
@@ -167,7 +135,7 @@ class ReportPage extends React.Component {
             				legend:{
               					display:true,
               					position:'right'
-            				},
+            				}
           			}}
         		/>
 
