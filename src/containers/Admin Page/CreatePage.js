@@ -68,10 +68,15 @@ class CreatePage extends React.Component {
                                         <input type="text" name="email" onChange={this.handleInputChange.bind(this)}/>
                                 </label>
 				<br></br>
-                               	<input type="submit" value="Submit" onClick={this.handleSubmit.bind(this)}/>
+				<Button variant="dark" onClick={this.handleSubmit.bind(this)}>Register</Button>{' '}
                         </form>
+				<br></br>
+				
+				<div className="result">
+                                     <p> {this.state.message}</p>
+                                     {this.state.password ? <h3> <br></br>the password is: {this.state.password}</h3> : null} 
+                            </div>
 		</div>
-
              	</div>
       
       )
@@ -93,17 +98,27 @@ class CreatePage extends React.Component {
 		console.log("Fullname: " + this.state.fullname + " UMW ID: " + this.state.umwid);
 		
   	}
+	
+         registerUser(userInfo){
+		 const header = {'Accept' : "application/json", "Content-Type": "application/x-www-form-urlencoded"};
+                const searchParams = new URLSearchParams(userInfo);
 
-	handleSubmit(event) {
-                const header = {'Accept' : "application/json", "Content-Type": "application/x-www-form-urlencoded"};
-                const searchParams = new URLSearchParams({fullname: this.state.fullname, umwid: this.state.umwid, accType: this.state.accType, email: this.state.email});
-
-                return fetch(`http://35.192.57.209:8000/testCreate`,
+               return fetch(`http://35.192.57.209:8000/testCreate`,
                 {method: "POST",
                 headers: header,
                 body: searchParams }).then(function(resp){
                         return resp.json();
                 });
+
+        }
+
+
+
+	 async handleSubmit(event) {
+
+                const user = await this.registerUser({fullname: this.state.fullname, umwid: this.state.umwid, accType: this.state.accType, email: this.state.email})
+		console.log(user);
+		this.setState(user);
     }
 
     }

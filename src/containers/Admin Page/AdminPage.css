@@ -116,4 +116,41 @@ body{
   transform: translate(-50%, -50%);
 }
 
+.result{
+	color: black;
+	font-weight: bold;
+	font-size: 1.6em;
+}
 
+.result p{
+        position: fixed;
+        top: 112%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.result h3{
+	  color: black;
+        font-weight: bold;
+        font-size: 1em;
+	position: fixed;
+        top: 135%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.users{
+        position: fixed;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+
+.usersRes{
+	color: black;
+	z-index: 2;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
