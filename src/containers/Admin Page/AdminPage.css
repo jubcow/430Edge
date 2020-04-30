@@ -51,7 +51,7 @@ li a:hover {
 .location{ 
   font-size: 2em;
   position: fixed;
-  top: 10%;
+  top: 5%;
   left: 80%;
   transform: translate(-50%, -50%);
 }
@@ -111,7 +111,7 @@ body{
 
 .buttonLocation{
  position: fixed;
-  top: 10%;
+  top: 5%;
   left: 95%;
   transform: translate(-50%, -50%);
 }
