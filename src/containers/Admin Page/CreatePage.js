@@ -46,7 +46,7 @@ class CreatePage extends React.Component {
 
 		<div className="location2">
 			
-                        <h1>Testing Account Creation:</h1>
+                        <h1>Account Creation:</h1>
                         <form>
                         	<label>
                                 	Full Name :
