@@ -61,15 +61,15 @@ class AdminPage extends React.Component {
 
 		 <div className="row location3">
 				<center><h1> Task Table </h1></center>
-                                <div className ="column" style={{backgroundColor : '#aaa'}}>
+                                <div className ="column" style={{backgroundColor : '#5da9c9'}}>
 					{this.state.info.map(info => <div>{info.UMWID}</div>)}
 					
 				</div>
-				<div className ="column" style={{backgroundColor : '#bbb'}}>
+				<div className ="column" style={{backgroundColor : '#6db3cf'}}>
 					{this.state.info.map(info => <div>{info.Fullname}</div>)}
 					
 				</div>
-				<div className ="column" style={{backgroundColor : '#ccc'}}>
+				<div className ="column" style={{backgroundColor : '#5da9c9'}}>
 					{this.state.info.map(info => <div>
 		
 						<form onSubmit={this.onFormSubmit}>
