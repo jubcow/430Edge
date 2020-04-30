@@ -21,7 +21,6 @@ const ModuleProgress = (props) => {
     }
 
     return (
-        // TODO circular progress bar with module name in center
         <div className="ModuleProgress">
             <VisibilitySensor>
                 {({ isVisible }) => {

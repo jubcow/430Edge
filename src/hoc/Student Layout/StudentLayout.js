@@ -12,23 +12,28 @@ const StudentLayout = (props) => {
     
 
     return (
-        <div className="StudentLayout" class="container-fluid">
+        <div class="container-fluid">
 
             <Topbar name={props.name} />
-            <div className="row">
+            <div className="studentContent">
+                <div className="moduleBar">
 
-                <ModuleBar 
-                    exploreProgress={props.modules.exploreProgress}
-                    developProgress={props.modules.developProgress}
-                    growProgress={props.modules.growProgress} 
-                    executeProgress={props.modules.executeProgress} />
-            </div>
-            <div className="row">
-                <div className="column">
-                    <CurrentTasks current={props.current} />
+                    <ModuleBar 
+                        exploreProgress={props.modules.exploreProgress}
+                        developProgress={props.modules.developProgress}
+                        growProgress={props.modules.growProgress} 
+                        executeProgress={props.modules.executeProgress} />
                 </div>
-                <div className="column">
-                    <RecentActivity recent={props.recent} />
+
+                <div className="taskContent">
+                    <div className="row">
+                        <div className="column">
+                            <CurrentTasks current={props.current} />
+                        </div>
+                        <div className="column">
+                            <RecentActivity recent={props.recent} />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

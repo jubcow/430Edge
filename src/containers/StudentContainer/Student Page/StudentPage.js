@@ -49,12 +49,14 @@ class StudentPage extends Component {
         let recentTasks = [
             "Sign up for the EDGE program",
             "Attend a job fair",
+            "Attend a resume workshop",
             "Build a resume"
         ]
         let currentTasks = [
             "Apply for an internship",
             "Attend a resume workshop",
-            "Create a LinkedIn account"
+            "Create a LinkedIn account",
+            "Apply for a job"
         ]
 
         var moduleProgress = {

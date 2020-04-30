@@ -1,4 +1,5 @@
-
+.studentContent {
+}
 
 .column{
 	float:left;	
@@ -10,4 +11,14 @@
 	content:"";
 	display: table;
 	clear: both;
+}
+
+.moduleBar {
+	padding-top: 2%;
+
+}
+
+.taskContent {
+	padding-top: 20%;
+	padding-left: 10%;
 }
